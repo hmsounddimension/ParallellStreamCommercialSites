@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Ayor</title>
+
+<script>
+function buy() {
+    document.querySelector(".hero").style.display = "none";
+    document.querySelector(".cta").style.display = "none";
+    document.getElementById("success").style.display = "flex";
+}
+</script>
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Inter:wght@300;400&display=swap" rel="stylesheet">
+
+<style>
+body {
+    margin: 0;
+    background: white;
+    color: black;
+}
+
+/* HERO */
+.hero {
+    position: relative;
+    height: 100vh;
+    background: url('ayor-hero.jpg') center/cover no-repeat;
+}
+
+/* Ljus overlay */
+.hero::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to bottom, rgba(255,255,255,0.2), rgba(255,255,255,0.75));
+}
+
+/* LOGO */
+.logo {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    width: 120px;
+    z-index: 2;
+}
+
+/* TEXT */
+.hero-text {
+    position: absolute;
+    bottom: 140px;
+    left: 20px;
+    right: 20px;
+    z-index: 2;
+    text-align: center;
+}
+
+.hero-text h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 34px;
+    font-weight: 600;
+    margin: 0 0 10px 0;
+    letter-spacing: 0.5px;
+}
+
+.hero-text p {
+    font-family: 'Inter', sans-serif;
+    font-size: 14px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: rgba(0,0,0,0.6);
+}
+
+/* CTA */
+.cta {
+    position: fixed;
+    left: 50%;
+    bottom: 30px;
+    transform: translateX(-50%);
+
+    width: 90%;
+    max-width: 400px;
+
+    padding: 18px;
+    border: 1px solid black;
+    border-radius: 0;
+
+    background: white;
+    color: black;
+    font-size: 16px;
+    font-family: 'Inter', sans-serif;
+    letter-spacing: 1px;
+
+    z-index: 10;
+}
+
+/* SUCCESS */
+.success {
+    display: none;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    flex-direction: column;
+}
+
+.success h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 30px;
+    margin-bottom: 10px;
+}
+
+.success p {
+    font-family: 'Inter', sans-serif;
+    opacity: 0.7;
+}
+</style>
+</head>
+
+<body>
+
+<div class="hero">
+
+    <img src="ayor-logo.png" class="logo"/>
+
+    <div class="hero-text">
+        <h1>Spring Collection</h1>
+        <p>Exclusive offer</p>
+    </div>
+
+</div>
+
+<button class="cta" onclick="buy()">Shop now</button>
+
+<div id="success" class="success">
+    <h1>Thank you</h1>
+    <p>Your Ayor look is on its way.</p>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Ragle</title>
+<script>function buy() {
+    document.querySelector(".hero").style.display = "none";
+    document.querySelector(".cta").style.display = "none";
+    document.getElementById("success").style.display = "flex";
+}</script>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;600&display=swap" rel="stylesheet">
+<style>
+body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+    background: black;
+    color: white;
+}
+
+/* HERO */
+.hero {
+    position: relative;
+    height: 100vh;
+    background: url('ragle-hero.jpg') center/cover no-repeat;
+}
+
+/* Mörk overlay */
+.hero::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to bottom, rgba(0,0,0,0.2), rgba(0,0,0,0.7));
+}
+
+/* LOGO */
+.logo {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    width: 110px;
+    z-index: 2;
+}
+
+/* TEXT över bild */
+.hero-text {
+    position: absolute;
+    bottom: 120px;
+    left: 20px;
+    right: 20px;
+    z-index: 2;
+    text-align: center;
+}
+
+.hero-text h1 {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    font-size: 30px;
+    letter-spacing: 1px;
+
+    background: linear-gradient(to right, #ffffff, #cfcfcf);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    line-height: 1.2;
+
+    margin: 0 0 10px 0;
+}
+
+.hero-text p {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 300;
+    font-size: 16px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+
+    color: rgba(255,255,255,0.8);
+}
+
+/* CTA */
+.cta {
+    position: fixed;
+    left: 50%;
+    bottom: 30px;
+    transform: translateX(-50%);
+
+    width: 90%;
+    max-width: 400px;
+
+    padding: 18px;
+    border: none;
+    border-radius: 14px;
+
+    background: linear-gradient(135deg, #ff7a18, #ff3d00);
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+
+    box-shadow: 0 10px 30px rgba(255, 60, 0, 0.4);
+    z-index: 10;
+}
+
+/* SUCCESS */
+.success {
+    display: none;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    flex-direction: column;
+}
+.success h1 {
+    font-size: 28px;
+    margin-bottom: 10px;
+}
+
+.success p {
+    opacity: 0.8;
+}
+</style>
+</head>
+
+<body>
+
+<div class="hero">
+
+    <img src="ragle-logo.png" class="logo"/>
+
+    <div class="hero-text">
+        <h1>Drive the future with Ragle</h1>
+        <p>Exclusive offer</p>
+    </div>
+
+</div>
+
+<button class="cta" onclick="buy()">Reserve now</button>
+
+<div id="success" class="success">
+    <h1>Congratulations</h1>
+    <p>You’ve secured your Ragle.</p>
+</div>
+
+</body>
+</html>

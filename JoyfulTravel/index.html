@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Joyful Travel</title>
+
+<script>
+function buy() {
+    document.querySelector(".hero").style.display = "none";
+    document.querySelector(".cta").style.display = "none";
+    document.getElementById("success").style.display = "flex";
+}
+</script>
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500&family=Inter:wght@300;400&display=swap" rel="stylesheet">
+
+<style>
+body {
+    margin: 0;
+    font-family: 'Inter', sans-serif;
+    background: #0b1f1a;
+    color: white;
+}
+
+/* HERO */
+.hero {
+    position: relative;
+    height: 100vh;
+    background: url('joyful-hero.jpg') center/cover no-repeat;
+}
+
+/* overlay */
+.hero::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to bottom, rgba(0,0,0,0.2), rgba(0,0,0,0.6));
+}
+
+/* LOGO */
+.logo {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    width: 130px;
+    z-index: 2;
+}
+
+/* TEXT */
+.hero-text {
+    position: absolute;
+    bottom: 140px;
+    left: 20px;
+    right: 20px;
+    text-align: center;
+    z-index: 2;
+}
+
+.hero-text h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 34px;
+    margin: 0 0 10px 0;
+}
+
+.hero-text p {
+    letter-spacing: 2px;
+    font-size: 14px;
+    text-transform: uppercase;
+    opacity: 0.85;
+}
+
+/* CTA */
+.cta {
+    position: fixed;
+    left: 50%;
+    bottom: 30px;
+    transform: translateX(-50%);
+
+    width: 90%;
+    max-width: 400px;
+
+    padding: 18px;
+    border: none;
+    border-radius: 30px;
+
+    background: linear-gradient(135deg, #00c6a7, #00e0ff);
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+
+    box-shadow: 0 10px 30px rgba(0, 200, 170, 0.4);
+    z-index: 10;
+}
+
+/* SUCCESS */
+.success {
+    display: none;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    flex-direction: column;
+}
+
+.success h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 30px;
+    margin-bottom: 10px;
+}
+
+.success p {
+    opacity: 0.8;
+}
+</style>
+</head>
+
+<body>
+
+<div class="hero">
+
+    <img src="joyful-logo.png" class="logo"/>
+
+    <div class="hero-text">
+        <h1>Escape to paradise</h1>
+        <p>Exclusive offer</p>
+    </div>
+
+</div>
+
+<button class="cta" onclick="buy()">Book your trip</button>
+
+<div id="success" class="success">
+    <h1>🌴 You're all set</h1>
+    <p>Your journey with Joyful Travel begins soon.</p>
+</div>
+
+</body>
+</html>
