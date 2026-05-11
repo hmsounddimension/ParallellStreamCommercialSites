@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<meta name="robots" content="noindex, nofollow">
+<title>HUGO BOSS</title>
+
+<script>
+function buy() {
+    document.querySelector(".hero").style.display = "none";
+    document.querySelector(".cta").style.display = "none";
+    document.getElementById("success").style.display = "flex";
+}
+</script>
+
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400&family=Inter:wght@300;400&display=swap" rel="stylesheet">
+
+<style>
+body {
+    margin: 0;
+    background: #0a0a0a;
+    color: white;
+}
+
+.hero {
+    position: relative;
+    height: 100vh;
+    background: url('hugo-boss-hero.png') center/cover no-repeat;
+}
+
+.hero::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to bottom, rgba(0,0,0,0.15), rgba(0,0,0,0.65));
+}
+
+.logo {
+    position: absolute;
+    top: 24px;
+    left: 20px;
+    width: 120px;
+    z-index: 2;
+}
+
+.hero-text {
+    position: absolute;
+    bottom: 140px;
+    left: 20px;
+    right: 20px;
+    z-index: 2;
+    text-align: center;
+}
+
+.hero-text h1 {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 300;
+    font-size: 40px;
+    letter-spacing: 4px;
+    margin: 0 0 10px 0;
+    color: #f0e6d0;
+}
+
+.hero-text p {
+    font-family: 'Inter', sans-serif;
+    font-weight: 300;
+    font-size: 11px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: rgba(210, 180, 120, 0.85);
+}
+
+.cta {
+    position: fixed;
+    left: 50%;
+    bottom: 30px;
+    transform: translateX(-50%);
+
+    width: 90%;
+    max-width: 400px;
+
+    padding: 18px;
+    border: 1px solid rgba(190, 155, 80, 0.7);
+    border-radius: 0;
+
+    background: rgba(10, 10, 10, 0.6);
+    color: #c9a84c;
+    font-family: 'Inter', sans-serif;
+    font-size: 12px;
+    font-weight: 400;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+
+    cursor: pointer;
+    z-index: 10;
+}
+
+.success {
+    display: none;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    flex-direction: column;
+    background: #0a0a0a;
+}
+
+.success h1 {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 300;
+    font-size: 36px;
+    letter-spacing: 3px;
+    color: #f0e6d0;
+    margin-bottom: 12px;
+}
+
+.success p {
+    font-family: 'Inter', sans-serif;
+    font-weight: 300;
+    font-size: 12px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: rgba(200, 168, 80, 0.75);
+}
+</style>
+</head>
+
+<body>
+
+<div class="hero">
+
+    <img src="hugo-boss-logo.png" class="logo"/>
+
+    <div class="hero-text">
+        <h1>The Scent</h1>
+        <p>Eau de Toilette</p>
+    </div>
+
+</div>
+
+<button class="cta" onclick="buy()">Shop now</button>
+
+<div id="success" class="success">
+    <h1>Thank you</h1>
+    <p>Your order is confirmed.</p>
+</div>
+
+</body>
+</html>
